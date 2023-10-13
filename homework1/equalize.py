@@ -4,7 +4,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import cv2
-img = cv2.imread("./moon.jpg",cv2.IMREAD_GRAYSCALE)
+img = cv2.imread("homework1/moon.jpg",cv2.IMREAD_GRAYSCALE)
 equalized_image = cv2.equalizeHist(img)
 
 img_hist = cv2.calcHist([img], [0], None, [256], [0, 256])

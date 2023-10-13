@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import cv2
 images = ["dental.jpg","parrot.jpg","skull.jpg"]
 for i in range(len(images)):
-    original_img = cv2.imread("./" + images[i],cv2.IMREAD_GRAYSCALE)
+    original_img = cv2.imread("homework1/" + images[i],cv2.IMREAD_GRAYSCALE)
     ahe_8 = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8, 8))
     ahe_16 = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(16,16))
     res_8 = ahe_8.apply(original_img)
