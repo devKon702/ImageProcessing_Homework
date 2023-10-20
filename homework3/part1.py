@@ -1,14 +1,13 @@
+# Nguyễn Nhật Kha
+# D20CQCNPM01-N
+# N20DCCN031
 import numpy as np
 import matplotlib.pyplot as plt
-
 # Đọc hình ảnh (8bits, 256x256)
 mammogram = np.fromfile("homework3/Mammogram1.bin", dtype=np.uint8).reshape(256, 256)
-
 # Chọn ngưỡng threshold và biến đổi ảnh nhị phân
 threshold = 128
 binary_image = np.where(mammogram > threshold,255,0)
-
-
 # Hàm tạo hình ảnh biên nhị phân
 def approximate_contour_image(binary_image):
     contour_image = np.zeros_like(binary_image)

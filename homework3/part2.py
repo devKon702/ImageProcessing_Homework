@@ -1,10 +1,12 @@
+# Nguyễn Nhật Kha
+# D20CQCNPM01-N
+# N20DCCN031
 import numpy as np
 import matplotlib.pyplot as plt
-
 # Đọc hình ảnh (8bits, 256x256)
 lady_image = np.fromfile("homework3/lady.bin", dtype=np.uint8).reshape(256, 256)
 
-# (2) Tạo biểu đồ histogram cho hình ảnh gốc
+# Show hình ảnh gốc
 plt.figure(figsize=(10, 6))
 plt.subplot(2, 2, 1)
 plt.imshow(lady_image, cmap='gray')
@@ -13,7 +15,6 @@ plt.title('Hình ảnh gốc')
 plt.subplot(2, 2, 2)
 plt.hist(lady_image.ravel(), bins=256, range=(0, 256), density=True, color='gray', alpha=0.7)
 plt.title('Histogram hình ảnh gốc')
-
 # Hàm chuyển đôi full-scale contrast stretch
 def full_scale_constrast_stretch(image):
     min_val = np.min(lady_image)
@@ -27,9 +28,7 @@ def full_scale_constrast_stretch(image):
     return res
 
 stretched_image = full_scale_constrast_stretch(lady_image)
-
-
-# (4) Tạo biểu đồ histogram cho hình ảnh đã cân bằng
+# Show hình ảnh đã cân bằng
 plt.subplot(2, 2, 3)
 plt.imshow(stretched_image, cmap='gray')
 plt.title('Hình ảnh sau khi cân bằng')
