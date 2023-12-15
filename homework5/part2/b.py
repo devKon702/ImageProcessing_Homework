@@ -20,7 +20,7 @@ U, V = np.meshgrid(np.arange(-128, 128), np.arange(-128, 128))
 HLtildeCenter = np.double(np.sqrt(U**2 + V**2) <= U_cutoff)
 HLtilde = np.fft.fftshift(HLtildeCenter)
 
-# Apply ideal low-pass filter to the original girl2 image
+# Apply ideal low-pass filter to the original image
 LPF_original = np.fft.ifft2(np.fft.fft2(original) * HLtilde).real
 MSE_LPF_original = np.mean((LPF_original - original)**2)
 print(f'MSE: ideal LPF on Original: {MSE_LPF_original}')
