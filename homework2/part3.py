@@ -4,7 +4,7 @@
 import cv2
 import matplotlib.pyplot as plt
 
-J1 = cv2.imread("homework2/lena512color.jpg")
+J1 = cv2.imread("ImageProcessing_Homework/homework2/lena512color.jpg")
 
 J2 = J1.copy()
 J2[:, :, 0] = J1[:, :, 2]  
@@ -16,4 +16,4 @@ plt.imshow(J2)
 plt.title("J2 Image")
 plt.show()
 
-cv2.imwrite("homework2/lena512color_swapped.jpg", J2)
+# cv2.imwrite("homework2/lena512color_swapped.jpg", J2)

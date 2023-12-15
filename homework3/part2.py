@@ -17,8 +17,8 @@ plt.hist(lady_image.ravel(), bins=256, range=(0, 256), density=True, color='gray
 plt.title('Histogram hình ảnh gốc')
 # Hàm chuyển đôi full-scale contrast stretch
 def full_scale_constrast_stretch(image):
-    min_val = np.min(lady_image)
-    max_val = np.max(lady_image)
+    min_val = np.min(image)
+    max_val = np.max(image)
     res = image.copy()
     MP=2**8-1
     R=max_val-min_val
